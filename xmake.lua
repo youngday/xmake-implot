@@ -2,11 +2,13 @@ set_project("xmake-implot")
 set_languages("c++20")
 add_rules("mode.debug", "mode.release")
 
+add_requires("cmake::Vulkan::Vulkan", {alias = "vulkan",system = true})--usr cmake install 
+
 add_requires("fmt 10.1.1", "cppzmq 4.10.0", "toml++ 3.4.0", "concurrentqueue 1.04")
 add_requires("xtensor", "xtl", "xtensor-blas")
 add_requires("imgui 1.90.3", {configs = {glfw= true,opengl3 = true,sdl2 = true}})
 add_requires("implot 0.15","glad 0.1.36","nativefiledialog-extended 1.1.1","cxxopts 3.2.1","libcurl 8.5.0")
--- add_requires("cmake::Vulkan::Vulkan", {alias = "vulkan",system = true})
+
 
 add_packages("tbox", "yaml-cpp", "cppzmq", "fmt")
 add_packages("imgui","glad","nativefiledialog-extended","cxxopts","libcurl")
@@ -16,6 +18,8 @@ add_files("common/*.cpp")
 add_files("common/Fonts/*.cpp")
 add_includedirs("common","common/Fonts","3rdparty","3rdparty/stb","implot")
 
+
+-- implot demos
 target("simple")
     set_kind("binary")
     add_files("demos/simple.cpp")
@@ -55,3 +59,16 @@ target("voice")
     add_files("3rdparty/kissfft/*.c")
     add_files("3rdparty/iir1/iir/*.cpp")
     add_includedirs("3rdparty/kissfft","3rdparty/iir1/iir","3rdparty/iir1")     
+
+-- imgui demos
+target("imgui_sdl_vulkan")
+    set_kind("binary")
+    add_files("imgui/imgui_sdl_vulkan/*.cpp")
+    add_includedirs("imgui/imgui_sdl_vulkan")
+    add_packages("yaml-cpp","cppzmq","fmt")
+    add_packages("concurrentqueue","imgui","vulkan")
+target("imgui_glfw_opengl3")
+    set_kind("binary")
+    add_files("imgui/imgui_glfw_opengl3/main.cpp")
+    add_packages("yaml-cpp","cppzmq","fmt")
+    add_packages("concurrentqueue","imgui")
