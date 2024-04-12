@@ -362,7 +362,8 @@ struct ImMaps : public App {
                 renders++;                
             }
             ImPlot::PushPlotClipRect();
-            static const char* label = ICON_FA_COPYRIGHT " OpenStreetMap Contributors";
+            // static const char* label = ICON_FA_COPYRIGHT " OpenStreetMap Contributors";
+            static const char* label =  " OpenStreetMap Contributors";
             auto label_size = ImGui::CalcTextSize(label);
             auto label_off  = ImPlot::GetStyle().MousePosPadding;
             ImPlot::GetPlotDrawList()->AddText({pos.x + label_off.x, pos.y+size.y-label_size.y-label_off.y},IM_COL32_BLACK,label);

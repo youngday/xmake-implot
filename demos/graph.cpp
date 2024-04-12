@@ -65,7 +65,7 @@ struct ImGraph : App {
         ImGui::SameLine();
         ImGui::ColorEdit4("##Color",&expr.color.x,ImGuiColorEditFlags_NoInputs);
         
-        if (ImPlot::BeginPlot("##Plot",0,0,ImVec2(-1,-1),0,ImPlotAxisFlags_NoInitialFit,ImPlotAxisFlags_NoInitialFit)) {
+        if (ImPlot::BeginPlot("##Plot",ImVec2(-1,-1),ImPlotAxisFlags_NoInitialFit)) {
             limits = ImPlot::GetPlotLimits();
             if (valid) {
                 ImPlot::SetNextLineStyle(expr.color);
