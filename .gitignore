@@ -1,5 +1,5 @@
 [Bb]uild/
-.vscode/
+.vscode/compile_commands.json
 *.code-workspace
 
 # Prerequisites

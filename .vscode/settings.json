@@ -1,0 +1,14 @@
+{
+    "files.associations": {
+        "string": "cpp",
+        "*.tcc": "cpp",
+        "numeric": "cpp",
+        "optional": "cpp",
+        "ranges": "cpp",
+        "regex": "cpp",
+        "__locale": "cpp",
+        "algorithm": "cpp",
+        "memory_resource": "cpp",
+        "*.txx": "cpp"
+    }
+}

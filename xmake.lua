@@ -7,16 +7,17 @@ add_requires("cmake::Vulkan::Vulkan", {alias = "vulkan",system = true})--usr cma
 add_requires("fmt 10.1.1", "cppzmq 4.10.0", "toml++ 3.4.0", "concurrentqueue 1.04")
 add_requires("xtensor", "xtl", "xtensor-blas")
 add_requires("imgui 1.90.3", {configs = {glfw= true,opengl3 = true,sdl2 = true}})
-add_requires("implot 0.15","glad 0.1.36","nativefiledialog-extended 1.1.1","cxxopts 3.2.1","libcurl 8.5.0")
+add_requires("glad 0.1.36","nativefiledialog-extended 1.1.1","cxxopts 3.2.1","libcurl 8.5.0")
 
 
 add_packages("tbox", "yaml-cpp", "cppzmq", "fmt")
 add_packages("imgui","glad","nativefiledialog-extended","cxxopts","libcurl")
 
 add_files("implot/*.cpp")
+add_includedirs("implot")
 add_files("common/*.cpp")
 add_files("common/Fonts/*.cpp")
-add_includedirs("common","common/Fonts","3rdparty","3rdparty/stb","implot")
+add_includedirs("common","common/Fonts","3rdparty","3rdparty/stb")
 
 
 -- implot demos
@@ -50,9 +51,6 @@ target("perlin")
 --     add_files("3rdparty/kissfft/*.c")
 --     add_files("3rdparty/iir1/iir/*.cpp")
 --     add_includedirs("3rdparty/kissfft","3rdparty/iir1/iir","3rdparty/iir1")   
-target("stocks")
-    set_kind("binary")
-    add_files("demos/stocks.cpp")
 target("voice")
     set_kind("binary")
     add_files("demos/voice.cpp")  

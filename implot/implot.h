@@ -1277,21 +1277,21 @@ enum ImPlotFlagsObsolete_ {
     ImPlotFlags_YAxis3 = 1 << 21,
 };
 
-// namespace ImPlot {
+namespace ImPlot {
 
-// // OBSOLETED in v0.13 -> PLANNED REMOVAL in v1.0
-// IMPLOT_DEPRECATED( IMPLOT_API bool BeginPlot(const char* title_id,
-//                                              const char* x_label,  // = nullptr,
-//                                              const char* y_label,  // = nullptr,
-//                                              const ImVec2& size       = ImVec2(-1,0),
-//                                              ImPlotFlags flags        = ImPlotFlags_None,
-//                                              ImPlotAxisFlags x_flags  = 0,
-//                                              ImPlotAxisFlags y_flags  = 0,
-//                                              ImPlotAxisFlags y2_flags = ImPlotAxisFlags_AuxDefault,
-//                                              ImPlotAxisFlags y3_flags = ImPlotAxisFlags_AuxDefault,
-//                                              const char* y2_label     = nullptr,
-//                                              const char* y3_label     = nullptr) );
+// OBSOLETED in v0.13 -> PLANNED REMOVAL in v1.0
+IMPLOT_DEPRECATED( IMPLOT_API bool BeginPlot(const char* title_id,
+                                             const char* x_label,  // = nullptr,
+                                             const char* y_label,  // = nullptr,
+                                             const ImVec2& size       = ImVec2(-1,0),
+                                             ImPlotFlags flags        = ImPlotFlags_None,
+                                             ImPlotAxisFlags x_flags  = 0,
+                                             ImPlotAxisFlags y_flags  = 0,
+                                             ImPlotAxisFlags y2_flags = ImPlotAxisFlags_AuxDefault,
+                                             ImPlotAxisFlags y3_flags = ImPlotAxisFlags_AuxDefault,
+                                             const char* y2_label     = nullptr,
+                                             const char* y3_label     = nullptr) );
 
-// } // namespace ImPlot
+} // namespace ImPlot
 
 #endif
