@@ -1,5 +1,6 @@
 # xmake for imgui and implot
-
+## note
+please check https://github.com/youngday/easy_wasm_plotly, use rust ploty on web,you can also use python and js,will not use qt and imgui
 ## fork source 
 
 * implot demos
